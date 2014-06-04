@@ -1,0 +1,18 @@
+<div bindonce="event" class="event_detail pull-left">
+  <div class="pull-left event_img_container">
+    <img bo-src="event.logo | eventLogo" bo-alt="event.name" bo-title="event.name" />
+  </div>
+  <div class="pull-left event_info">
+    <p class="event_date" bo-text="((event.startdate + ' ' + event.enddate) | eventDate) + ', ' + event.place"></p>
+    <h4 class="event_title" bo-text="event.name"></h4>
+    <p class="event_description" bo-text="event.description"></p>
+  </div>
+  <div class="clearfix"></div>
+</div>
+
+<div class="pull-right">
+  <popular-events></popular-events>
+  <popular-speakers></popular-speakers>
+</div>
+
+<div class="clearfix"></div>

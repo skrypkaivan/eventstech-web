@@ -1,0 +1,18 @@
+<div class="side_widget">
+  <table class="popular_speakers">
+    <tr>
+      <th colspan="2">Популярные докладчики</th>
+    </tr>
+    <tr bindonce ng-repeat="speaker in speakers">
+      <td>
+        <a bo-href="'/speakers/' + speaker.slug" bo-title="speaker.name">
+          <img bo-src="speaker.photo | speakerPhoto" bo-alt="speaker.name" class="speaker_photo" />
+        </a>
+      </td>
+      <td>
+        <p class="speaker_name"><a bo-href="'/speakers/' + speaker.slug" bo-text="speaker.name"></a></p>
+        <p class="speaker_info"><a bo-href="'/speakers/' + speaker.slug" bo-text="speaker.description"></a></p>
+      </td>
+    </tr>
+  </table>
+</div>

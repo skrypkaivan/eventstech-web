@@ -1,0 +1,21 @@
+<ul class="speakers_list pull-left">
+  <li bindonce ng-repeat="speaker in speakers">
+    <div class="pull-left speaker_img_container">
+      <a bo-href="'/speakers/' + speaker.slug" bo-title="speaker.name">
+        <img bo-src="speaker.photo | speakerPhoto" bo-alt="speaker.name" class="speaker_photo" />
+      </a>
+    </div>
+    <div class="pull-left speaker_info">
+      <h4 class="speaker_title"><a bo-href="'/speakers/' + speaker.slug" bo-text="speaker.name"></a></h4>
+      <p class="speaker_description" bo-text="speaker.description"></p>
+    </div>
+    <div class="clearfix"></div>
+  </li>
+</ul>
+
+<div class="pull-right">
+  <popular-events></popular-events>
+  <popular-speakers></popular-speakers>
+</div>
+
+<div class="clearfix"></div>

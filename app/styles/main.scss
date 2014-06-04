@@ -1,0 +1,131 @@
+/*$icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";*/
+$grid-gutter-width: 30px;
+$container-large-desktop: 1112px + $grid-gutter-width;
+$standardBorderRadius: 3px;
+
+@import "_bootstrap";
+@import "compass/css3";
+@import "compass/utilities/sprites";
+@import "_basement";
+
+$icons-spacing: 4px;
+@import "icons/*.png";
+@include all-icons-sprites;
+
+
+
+/* Site's 2-nd level styles and components */
+
+@import "_navbar";
+
+.events_list {
+  @include default_list();
+  @include event_info();
+}
+
+.event_detail {
+  @include leftSideContainer();
+  @include border-radius($standardBorderRadius);
+  @include event_info();
+}
+
+.speakers_list {
+  @include default_list();
+  @include speaker_info();
+}
+
+.speaker_detail {
+  @include leftSideContainer();
+  @include speaker_info();
+}
+
+.side_widget {
+
+  margin-bottom: 12px;
+  width: 284px;
+
+  table {
+    width: 100%;
+    background: #FFF;
+    border-bottom: 1px solid #dde6ef;
+    @include border-radius($standardBorderRadius);
+    td {
+      vertical-align: middle;
+    }
+    th {
+      @include border-top-radius($standardBorderRadius);
+      color: #FFF;
+      padding: 10px;
+      font-size: 20px;
+      line-height: 20px;
+      text-align: center;
+      vertical-align: middle;
+    }
+    td {
+      border-bottom: 1px solid #dde6ef;
+      padding: 12px;
+      vertical-align: middle;
+    }
+    tr:last-of-type td {
+      border-bottom: 0;
+    }
+  }
+
+  .popular_events {
+
+    th {
+      background: #F6731B;
+    }
+
+    .event_title {
+      color: #393939;
+      font-size: 18px;
+      line-height: 22px;
+      margin: 0 0 6px 0;
+    }
+
+    .event_date {
+      color: #90979e;
+      font-size: 15px;
+      line-height: 18px;
+      margin: 0;
+    }
+
+    .event_participants {
+      color: #6B9DD0;
+      font-size: 20px;
+      line-height: 20px;
+      margin: 0;
+      padding-left: 35px;
+    }
+
+  }
+
+  .popular_speakers {
+
+    th {
+      background: #88B3E0;
+    }
+
+    .speaker_photo {
+      width: 54px;
+      height: 54px;
+      @include border-radius(27px);
+    }
+
+    .speaker_name {
+      color: #393939;
+      font-size: 18px;
+      line-height: 22px;
+      margin: 0 0 5px 0;
+    }
+
+    .speaker_info {
+      color: #90979E;
+      font-size: 15px;
+      line-height: 18px;
+      margin: 0;
+    }
+
+  }
+}

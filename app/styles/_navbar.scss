@@ -1,0 +1,95 @@
+.navbar {
+
+  $navButtonsBorder: 1px solid #88b5df;
+  $navButtonsBorderRaius: 4px;
+
+  background: #FFF;
+  font-size: 14px;
+  height: 77px;
+  border-bottom: 1px solid #e3e8ee;
+
+  .nav {
+    margin: 18px 0 0 50px;
+  }
+
+  li a, li a:hover {
+    background: transparent;
+    font-size: 20px;
+    font-weight: normal;
+    text-align: center;
+  }
+
+  li, li:hover {
+    background: transparent;
+    border: #{$navButtonsBorder};
+  }
+
+  .primary {
+
+    $colorActive: #F6731B;
+
+    li {
+      border-right: 0;
+    }
+
+    li.active, li.active:hover {
+      background: #{$colorActive};
+      border-color: #{$colorActive} !important;
+      a,a:hover {
+        color: #FFF;
+      }
+    }
+
+    li.active ~ li {
+      border-left: 0;
+    }
+
+    li:first-of-type {
+      border-left: #{$navButtonsBorder};
+      @include border-left-radius($navButtonsBorderRaius);
+    }
+
+    li:last-of-type {
+      border-right: #{$navButtonsBorder};
+      @include border-right-radius($navButtonsBorderRaius);
+    }
+
+    a, a:hover {
+      color: #4E5E6E;
+      min-width: 200px;
+      padding: 5px 5px 0px;
+      line-height: 30px;
+      text-transform: uppercase;
+      span.icon {
+        margin-right: 5px;
+      }
+
+    }
+
+  }
+
+  .secondary {
+
+    $colorActive: #6CC939;
+
+    a, a:hover {
+      color: #2d2d2d;
+      line-height: 20px;
+      padding: 8px 15px 7px;
+    }
+
+    li {
+      margin-left: 10px;
+      @include border-radius($navButtonsBorderRaius);
+    }
+
+    li.active, li.active:hover {
+      background: #{$colorActive};
+      border-color: #{$colorActive} !important;
+      a,a:hover {
+        color: #FFF;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,16 @@
+<div bindonce="speaker" class="speaker_detail pull-left">
+  <div class="pull-left speaker_img_container">
+      <img bo-src="speaker.photo | speakerPhoto" bo-alt="speaker.name" class="speaker_photo" />
+  </div>
+  <div class="pull-left speaker_info">
+    <h4 class="speaker_title" bo-text="speaker.name"></h4>
+    <p class="speaker_description" bo-text="speaker.description"></p>
+  </div>
+  <div class="clearfix"></div>
+</div>
+
+<div class="pull-right">
+  <popular-speakers></popular-speakers>
+</div>
+
+<div class="clearfix"></div>
