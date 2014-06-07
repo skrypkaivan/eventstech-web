@@ -41,35 +41,7 @@ $icons-spacing: 4px;
 
 .side_widget {
 
-  margin-bottom: 12px;
-  width: 284px;
-
-  table {
-    width: 100%;
-    background: #FFF;
-    border-bottom: 1px solid #dde6ef;
-    @include border-radius($standardBorderRadius);
-    td {
-      vertical-align: middle;
-    }
-    th {
-      @include border-top-radius($standardBorderRadius);
-      color: #FFF;
-      padding: 10px;
-      font-size: 20px;
-      line-height: 20px;
-      text-align: center;
-      vertical-align: middle;
-    }
-    td {
-      border-bottom: 1px solid #dde6ef;
-      padding: 12px;
-      vertical-align: middle;
-    }
-    tr:last-of-type td {
-      border-bottom: 0;
-    }
-  }
+  @include sideWidget();
 
   .popular_events {
 
@@ -127,5 +99,27 @@ $icons-spacing: 4px;
       margin: 0;
     }
 
+  }
+}
+
+.tags-bar {
+  font-size: 16px;
+  line-height: 22px;
+  margin: 0 0 20px 0;
+  ul {
+    display: inline-block;
+    margin: 0 0 0 5px;
+    li {
+      display: inline-block;
+      font-size: 14px;
+      line-height: 22px;
+      margin: 0 10px 0 0;
+      a, a:hover {
+        color: #FFF;
+        background: #acbdcf;
+        padding: 4px 10px 3px;
+        @include border-radius(8px);
+      }
+    }
   }
 }

@@ -52,6 +52,20 @@ a, a:hover {
   width: 810px;
 }
 
+@mixin standard_description() {
+  p { margin: 0 0 20px 0; }
+  li { margin: 0 0 20px 20px; list-style-type: disc }
+  iframe, object { margin: 20px 0 }
+  b { color: #333 !important; font-weight: bold }
+  h1, h2, h3, h4, h5, h6 {
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 20px 0;
+    padding: 0;
+  }
+}
+
 @mixin event_info() {
 
   .event_img_container {
@@ -81,6 +95,7 @@ a, a:hover {
     .event_description {
       font-size: 16px;
       line-height: 22px;
+      @include standard_description();
     }
 
     .event_activity {
@@ -120,9 +135,48 @@ a, a:hover {
 
     .speaker_title {
       color: #333;
+      font-size: 24px;
       font-weight: normal;
-      line-height: 1.3em;
+      line-height: 28px;
     }
 
+    .speaker_description {
+      font-size: 16px;
+      line-height: 22px;
+      @include standard_description();
+    }
+
+  }
+}
+
+@mixin sideWidget() {
+  margin-bottom: 12px;
+  width: 284px;
+
+  table {
+    width: 100%;
+    background: #FFF;
+    border-bottom: 1px solid #dde6ef;
+    @include border-radius($standardBorderRadius);
+    td {
+      vertical-align: middle;
+    }
+    th {
+      @include border-top-radius($standardBorderRadius);
+      color: #FFF;
+      padding: 10px;
+      font-size: 20px;
+      line-height: 20px;
+      text-align: center;
+      vertical-align: middle;
+    }
+    td {
+      border-bottom: 1px solid #dde6ef;
+      padding: 12px;
+      vertical-align: middle;
+    }
+    tr:last-of-type td {
+      border-bottom: 0;
+    }
   }
 }

@@ -21,6 +21,15 @@ angular.module('itytApp', ['ngResource', 'pasvaz.bindonce']).config(function ($r
         }
       }
     })
+    .when('/events/tags/:name', {
+      templateUrl: 'views/events.html',
+      controller: 'EventsCtrl',
+      resolve: {
+        data: function($route, Events) {
+          return Events.getByTag($route.current.params.name);
+        }
+      }
+    })
     .when('/speakers', {
       templateUrl: 'views/speakers.html',
       controller: 'SpeakersCtrl',
@@ -36,6 +45,15 @@ angular.module('itytApp', ['ngResource', 'pasvaz.bindonce']).config(function ($r
       resolve: {
         data: function($route, Speakers) {
           return Speakers.getSpeaker($route.current.params.name);
+        }
+      }
+    })
+    .when('/speakers/tags/:name', {
+      templateUrl: 'views/speakers.html',
+      controller: 'SpeakersCtrl',
+      resolve: {
+        data: function($route, Speakers) {
+          return Speakers.getByTag($route.current.params.name);
         }
       }
     })

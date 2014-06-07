@@ -6,7 +6,7 @@
     <div class="pull-left event_info">
       <p class="event_date" bo-text="((event.startdate + ' ' + event.enddate) | eventDate) + ', ' + event.place"></p>
       <h4 class="event_title"><a bo-href="'/events/' + event._id" bo-text="event.name"></a></h4>
-      <p class="event_description" bo-text="event.description"></p>
+      <p class="event_description" bo-text="event.shortDescription"></p>
       <div class="event_activity">
         <p class="event_comments"><span class="event_activity_counter" bo-text="event.comments"></span> Комментарии</p>
         <p class="event_participants"><span class="event_activity_counter" bo-text="event.participants"></span> Идут</p>

@@ -50,6 +50,24 @@ angular.module('itytApp').service('Events', ['$http', function Events($http) {
       });
   };
 
+  eventsFactory.getByTag = function(name) {
+    var response = {};
+    return $http.get(dataEventsUrl)
+      .success(function(data) {
+        response.events = data.filter(function(elem) {
+          return elem.tags.find(function(tag) {
+            return tag.slug === name;
+          });
+        });
+      })
+      .error(function(message) {
+        response.error = message;
+      })
+      .then(function() {
+        return response;
+      });
+  };
+
   return eventsFactory;
 
 }]);

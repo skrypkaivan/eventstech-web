@@ -4,7 +4,8 @@
   </div>
   <div class="pull-left speaker_info">
     <h4 class="speaker_title" bo-text="speaker.name"></h4>
-    <p class="speaker_description" bo-text="speaker.description"></p>
+    <tags-bar class="speaker_tags" entity="speakers" label="false" data="speaker.tags"></tags-bar>
+    <div class="speaker_description" bo-html="speaker.longDescription"></div>
   </div>
   <div class="clearfix"></div>
 </div>

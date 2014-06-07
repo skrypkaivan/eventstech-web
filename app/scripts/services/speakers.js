@@ -35,6 +35,24 @@ angular.module('itytApp').service('Speakers', ['$http', function Events($http) {
       });
   };
 
+  speakersFactory.getByTag = function(name) {
+    var response = {};
+    return $http.get(dataSpeakersUrl)
+      .success(function(data) {
+        response.speakers = data.filter(function(elem) {
+          return elem.tags.find(function(tag) {
+            return tag.slug === name;
+          });
+        });
+      })
+      .error(function(message) {
+        response.error = message;
+      })
+      .then(function() {
+        return response;
+      });
+  };
+
   speakersFactory.getPopular = function() {
     var response = {};
     return $http.get(dataSpeakersPopularUrl)
