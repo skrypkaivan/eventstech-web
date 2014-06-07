@@ -3,6 +3,7 @@
 angular.module('itytApp').service('Speakers', ['$http', function Events($http) {
   var dataSpeakersUrl = 'mock_data/dataSpeakers.json',
       dataSpeakersPopularUrl = 'mock_data/dataSpeakersPopular.json',
+      dataSpeakersSimilarUrl = 'mock_data/dataSpeakersSimilar.json',
       speakersFactory = {};
 
   speakersFactory.getAll = function() {
@@ -66,6 +67,20 @@ angular.module('itytApp').service('Speakers', ['$http', function Events($http) {
         return response;
       });
   };
+
+  speakersFactory.getSimilar = function() {
+    var response = {};
+    return $http.get(dataSpeakersSimilarUrl)
+      .success(function(data) {
+        response.speakers = data;
+      })
+      .error(function(message) {
+        response.error = message;
+      })
+      .then(function() {
+        return response;
+      });
+  }
 
   return speakersFactory;
 
