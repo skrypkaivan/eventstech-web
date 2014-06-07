@@ -3,7 +3,7 @@
     <img bo-src="event.logo | eventLogo" bo-alt="event.name" bo-title="event.name" />
   </div>
   <div class="pull-left event_info">
-    <p class="event_date" bo-text="((event.startdate + ' ' + event.enddate) | eventDate) + ', ' + event.place"></p>
+    <p class="event_date" bo-text="((event.startdate + ' ' + event.enddate) | eventDate) + ', ' + event.city + ', ' + event.place"></p>
     <h4 class="event_title" bo-text="event.name"></h4>
     <tags-bar class="event_tags" entity="events" label="true" data="event.tags"></tags-bar>
     <div class="event_description" bo-html="event.longDescription"></div>

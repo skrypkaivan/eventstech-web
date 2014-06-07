@@ -7,9 +7,9 @@ angular.module('itytApp').directive('tagsBar', function () {
     restrict: 'E',
     scope: {
       data: '=',
-      entity: '@'
+      entity: '@entity'
     },
-    link: function(scope, element, attrs) {
+    link: function($scope, element, attrs) {
       if (attrs.label == 'true') {
         element.prepend('Категории: ');
       }
