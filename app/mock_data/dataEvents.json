@@ -47,7 +47,7 @@
   "tags": [{"name": "Enterpreneurship", "slug": "enterpreneurship"}, {"name": "Startups", "slug": "startups"}, {"name": "Конференция", "slug": "conference"}]
 },
 {
-  "_id": 5,
+  "_id": 4,
   "name": "ХарьковJS 2014",
   "shortName": "ХарьковJS 2014",
   "city": "Харьков",
@@ -63,7 +63,7 @@
   "tags": [{"name": "Javscript", "slug": "javascript"}, {"name": "Front-end", "slug": "frontend"}, {"name": "Конференция", "slug": "conference"}]
 },
 {
-  "_id": 6,
+  "_id": 5,
   "name": "DevCon 2014",
   "shortName": "DevCon 2014",
   "city": "Москва",
