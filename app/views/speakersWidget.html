@@ -1,9 +1,9 @@
 <div class="side_widget">
-  <table class="popular_speakers">
+  <table>
     <tr>
-      <th colspan="2">Докладчики мероприятия</th>
+      <th colspan="2" ng-bind="title"></th>
     </tr>
-    <tr bindonce ng-repeat="speaker in event.speakers">
+    <tr bindonce ng-repeat="speaker in speakers">
       <td>
         <a bo-href="'/speakers/' + speaker.slug" bo-title="speaker.name">
           <img bo-src="speaker.photo | speakerPhoto" bo-alt="speaker.name" class="speaker_photo" />

@@ -1,7 +1,7 @@
 <div class="side_widget">
-  <table class="popular_events">
+  <table>
     <tr>
-      <th colspan="2">Популярные события</th>
+      <th colspan="2" ng-bind="title"></th>
     </tr>
     <tr bindonce ng-repeat="event in events">
       <td>

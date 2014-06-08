@@ -1,10 +1,20 @@
 'use strict';
 
-angular.module('itytApp').directive('eventSpeakers', ['Speakers', function (Speakers) {
+angular.module('itytApp').directive('eventSpeakers', [function () {
   return {
-    templateUrl: 'views/eventSpeakersWidget.html',
+    templateUrl: 'views/speakersWidget.html',
     replace: 'true',
-    restrict: 'E'
+    restrict: 'E',
+    scope: {
+      data: '='
+    },
+    controller: function($scope){
+      $scope.title = 'Докладчики мероприятия';
+      $scope.speakers = $scope.data;
+    },
+    link: function(scope, element) {
+      element.find('table').addClass('popular_speakers');
+    }
   };
 }]);
 

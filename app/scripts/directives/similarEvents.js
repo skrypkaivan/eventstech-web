@@ -2,7 +2,7 @@
 
 angular.module('itytApp').directive('similarEvents', ['Events', function (Events) {
   return {
-    templateUrl: 'views/similarEventsWidget.html',
+    templateUrl: 'views/eventsWidget.html',
     replace: 'true',
     restrict: 'E',
     scope: {},
@@ -10,6 +10,10 @@ angular.module('itytApp').directive('similarEvents', ['Events', function (Events
       Events.getSimilar().then(function(data) {
         $scope.events = data.events;
       });
+    },
+    link: function(scope, element) {
+      scope.title = 'Похожие события';
+      element.find('table').addClass('similar_events');
     }
   };
 }]);

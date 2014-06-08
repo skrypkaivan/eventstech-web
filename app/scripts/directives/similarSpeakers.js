@@ -2,7 +2,7 @@
 
 angular.module('itytApp').directive('similarSpeakers', ['Speakers', function (Speakers) {
   return {
-    templateUrl: 'views/similarSpeakersWidget.html',
+    templateUrl: 'views/speakersWidget.html',
     replace: 'true',
     restrict: 'E',
     scope: {},
@@ -10,6 +10,10 @@ angular.module('itytApp').directive('similarSpeakers', ['Speakers', function (Sp
       Speakers.getSimilar().then(function(data) {
         $scope.speakers = data.speakers;
       });
+    },
+    link: function(scope, element) {
+      scope.title = 'Похожие докладчики';
+      element.find('table').addClass('similar_speakers');
     }
   };
 }]);

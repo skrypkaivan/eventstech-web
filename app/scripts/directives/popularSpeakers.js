@@ -2,7 +2,7 @@
 
 angular.module('itytApp').directive('popularSpeakers', ['Speakers', function (Speakers) {
   return {
-    templateUrl: 'views/popularSpeakersWidget.html',
+    templateUrl: 'views/speakersWidget.html',
     replace: 'true',
     restrict: 'E',
     scope: {},
@@ -10,6 +10,10 @@ angular.module('itytApp').directive('popularSpeakers', ['Speakers', function (Sp
       Speakers.getPopular().then(function(data) {
         $scope.speakers = data.speakers;
       });
+    },
+    link: function(scope, element) {
+      scope.title = 'Популярные докладчики';
+      element.find('table').addClass('popular_speakers');
     }
   };
 }]);
