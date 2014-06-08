@@ -2,11 +2,13 @@
 $grid-gutter-width: 30px;
 $container-large-desktop: 1112px + $grid-gutter-width;
 $standardBorderRadius: 3px;
+$leftSideContainerWidth: 810px;
 
 @import "_bootstrap";
 @import "compass/css3";
 @import "compass/utilities/sprites";
 @import "_basement";
+@import "_sidewidgets";
 
 $icons-spacing: 4px;
 @import "icons/*.png";
@@ -39,68 +41,10 @@ $icons-spacing: 4px;
   @include speaker_info();
 }
 
-.side_widget {
-
-  @include sideWidget();
-
-  .popular_events {
-
-    th {
-      background: #F6731B;
-    }
-
-    .event_title {
-      color: #393939;
-      font-size: 18px;
-      line-height: 22px;
-      margin: 0 0 6px 0;
-    }
-
-    .event_date {
-      color: #90979e;
-      font-size: 15px;
-      line-height: 18px;
-      margin: 0;
-    }
-
-    .event_participants {
-      color: #6B9DD0;
-      font-size: 20px;
-      line-height: 20px;
-      margin: 0;
-      padding-left: 35px;
-    }
-
-  }
-
-  .popular_speakers, .similar_speakers {
-
-    th {
-      background: #88B3E0;
-    }
-
-    .speaker_photo {
-      width: 54px;
-      height: 54px;
-      @include border-radius(27px);
-    }
-
-    .speaker_name {
-      color: #393939;
-      font-size: 18px;
-      line-height: 22px;
-      margin: 0 0 5px 0;
-    }
-
-    .speaker_info {
-      color: #90979E;
-      font-size: 15px;
-      line-height: 18px;
-      margin: 0;
-    }
-
-  }
+.speaker-events-list {
+  margin: 0px 0 20px 0;
 }
+
 
 .tags-bar {
   font-size: 16px;

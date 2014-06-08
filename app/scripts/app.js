@@ -45,6 +45,10 @@ angular.module('itytApp', ['ngResource', 'pasvaz.bindonce']).config(function ($r
       resolve: {
         data: function($route, Speakers) {
           return Speakers.getSpeaker($route.current.params.name);
+        },
+        //Important: temporary mock -  for prod should be made with all events data in the main data at once
+        events: function(Events) {
+          return Events.getAll();
         }
       }
     })
