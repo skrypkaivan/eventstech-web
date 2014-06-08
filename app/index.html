@@ -51,25 +51,38 @@
       <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
 
-
-    <nav class="navbar navbar-static-top" role="navigation">
-      <div class="container">
-        <div class="logo pull-left">
-          <a href="/"><img bindonce bo-src="Page.getImage()" alt="ITyt" /></a>
+    <header>
+      <nav class="navbar navbar-static-top" role="navigation">
+        <div class="container">
+          <div class="logo pull-left">
+            <a href="/"><img bindonce bo-src="Page.getImage()" alt="ITyt" /></a>
+          </div>
+          <ul class="nav navbar-left navbar-nav primary">
+            <li active-navigation-class="active"><a href="/"><span class="icon icons-events" icon="icons-events">&nbsp;</span> События</a></li>
+            <li active-navigation-class="active"><a href="/speakers"><span class="icon icons-speakers" icon="icons-speakers">&nbsp;</span> Докладчики</a></li>
+          </ul>
+          <ul class="nav navbar-right navbar-nav secondary">
+            <li active-navigation-class="active"><a href="/signin">Вход</a></li>
+            <li active-navigation-class="active"><a href="/signup">Регистрация</a></li>
+          </ul>
+          <div class="clearfix"></div>
         </div>
-        <ul class="nav navbar-left navbar-nav primary">
-          <li active-navigation-class="active"><a href="/"><span class="icon icons-events" icon="icons-events">&nbsp;</span> События</a></li>
-          <li active-navigation-class="active"><a href="/speakers"><span class="icon icons-speakers" icon="icons-speakers">&nbsp;</span> Докладчики</a></li>
-        </ul>
-        <ul class="nav navbar-right navbar-nav secondary">
-          <li active-navigation-class="active"><a href="/signin">Вход</a></li>
-          <li active-navigation-class="active"><a href="/signup">Регистрация</a></li>
-        </ul>
-        <div class="clearfix"></div>
-      </div>
-    </nav>
+      </nav>
+    </header>
 
     <div class="container" ng-view=""></div>
+
+    <footer>
+      <nav class="navbar navbar-static-bottom" role="navigation">
+        <div class="container">
+          <ul class="nav navbar-left navbar-nav navbar-footer">
+            <li><a href="/">События</a></li>
+            <li><a href="/speakers">Докладчики</a></li>
+          </ul>
+          <div class="copyright pull-right">&copy ITtyt.com 2014</div>
+        </div>
+      </nav>
+    </footer>
 
     <script src="bower_components/angular/angular.js"></script>
 
