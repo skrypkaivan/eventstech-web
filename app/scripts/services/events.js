@@ -4,6 +4,7 @@ angular.module('itytApp').service('Events', ['$http', function Events($http) {
 
   var dataEventsUrl = 'mock_data/dataEvents.json',
       dataEventsPopularUrl = 'mock_data/dataEventsPopular.json',
+      dataEventsSimilarUrl = 'mock_data/dataEventsSimilar.json',
       eventsFactory = {};
 
   eventsFactory.getAll = function() {
@@ -59,6 +60,20 @@ angular.module('itytApp').service('Events', ['$http', function Events($http) {
             return tag.slug === name;
           });
         });
+      })
+      .error(function(message) {
+        response.error = message;
+      })
+      .then(function() {
+        return response;
+      });
+  };
+
+  eventsFactory.getSimilar = function() {
+    var response = {};
+    return $http.get(dataEventsSimilarUrl)
+      .success(function(data) {
+        response.events = data;
       })
       .error(function(message) {
         response.error = message;
