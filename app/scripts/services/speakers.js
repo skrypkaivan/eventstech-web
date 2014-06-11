@@ -10,7 +10,7 @@ angular.module('itytApp').service('Speakers', ['$http', function Events($http) {
     var response = {};
     return $http.get(dataSpeakersUrl)
       .success(function(data) {
-        response.speakers = data;
+        response = data;
       })
       .error(function(message) {
         response.error = message;
@@ -24,7 +24,7 @@ angular.module('itytApp').service('Speakers', ['$http', function Events($http) {
     var response = {};
     return $http.get(dataSpeakersUrl)
       .success(function(data) {
-        response.speaker = data.find(function(elem) {
+        response = data.find(function(elem) {
           return elem['slug'] === name;
         });
       })
@@ -40,7 +40,7 @@ angular.module('itytApp').service('Speakers', ['$http', function Events($http) {
     var response = {};
     return $http.get(dataSpeakersUrl)
       .success(function(data) {
-        response.speakers = data.filter(function(elem) {
+        response = data.filter(function(elem) {
           return elem.tags.find(function(tag) {
             return tag.slug === name;
           });
@@ -58,7 +58,7 @@ angular.module('itytApp').service('Speakers', ['$http', function Events($http) {
     var response = {};
     return $http.get(dataSpeakersPopularUrl)
       .success(function(data) {
-        response.speakers = data;
+        response = data;
       })
       .error(function(message) {
         response.error = message;
@@ -72,7 +72,7 @@ angular.module('itytApp').service('Speakers', ['$http', function Events($http) {
     var response = {};
     return $http.get(dataSpeakersSimilarUrl)
       .success(function(data) {
-        response.speakers = data;
+        response = data;
       })
       .error(function(message) {
         response.error = message;

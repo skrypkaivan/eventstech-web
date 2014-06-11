@@ -8,7 +8,8 @@ angular.module('itytApp').directive('similarEvents', ['Events', function (Events
     scope: {},
     controller: function($scope){
       Events.getSimilar().then(function(data) {
-        $scope.events = data.events;
+        //ToDo: handle errors
+        $scope.events = data;
       });
     },
     link: function(scope, element) {

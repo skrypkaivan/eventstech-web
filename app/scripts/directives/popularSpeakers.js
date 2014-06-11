@@ -8,7 +8,8 @@ angular.module('itytApp').directive('popularSpeakers', ['Speakers', function (Sp
     scope: {},
     controller: function($scope){
       Speakers.getPopular().then(function(data) {
-        $scope.speakers = data.speakers;
+        //ToDo: handle errors
+        $scope.speakers = data;
       });
     },
     link: function(scope, element) {

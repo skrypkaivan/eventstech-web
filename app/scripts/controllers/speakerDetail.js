@@ -7,14 +7,14 @@ angular.module('itytApp').controller('SpeakerDetailCtrl', ['$scope', 'Page', 'Co
     * 1. Make a proper errors handling
     * 2. Remove events injection - should be in main data at once
    */
-  var title = [Constants.meta.SITE_NAME, data.speaker ? data.speaker.name : 'Ошибка'],
+  var title = [Constants.meta.SITE_NAME, data && !data.error && data.name || 'Ошибка'],
       //To be removed:
-      newEventsData = events.events.filter(function(elem) {
-        return data.speaker.events.indexOf(elem._id) != -1;
+      newEventsData = events.filter(function(elem) {
+        return data.events.indexOf(elem._id) != -1;
       });
 
   Page.setTitle(title.join(' - '));
-  data.speaker.events = newEventsData;
-  $scope.speaker = data.speaker;
+  data.events = newEventsData;
+  $scope.speaker = data;
 
 }]);

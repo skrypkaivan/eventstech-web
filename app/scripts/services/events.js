@@ -11,7 +11,7 @@ angular.module('itytApp').service('Events', ['$http', function Events($http) {
     var response = {};
     return $http.get(dataEventsUrl)
       .success(function(data) {
-        response.events = data;
+        response = data;
       })
       .error(function(message) {
         response.error = message;
@@ -25,7 +25,7 @@ angular.module('itytApp').service('Events', ['$http', function Events($http) {
     var response = {};
     return $http.get(dataEventsUrl)
       .success(function(data) {
-        response.event = data.find(function(elem) {
+        response = data.find(function(elem) {
           return +elem['_id'] === +id;
         });
       })
@@ -41,7 +41,7 @@ angular.module('itytApp').service('Events', ['$http', function Events($http) {
     var response = {};
     return $http.get(dataEventsPopularUrl)
       .success(function(data) {
-        response.events = data;
+        response = data;
       })
       .error(function(message) {
         response.error = message;
@@ -55,7 +55,7 @@ angular.module('itytApp').service('Events', ['$http', function Events($http) {
     var response = {};
     return $http.get(dataEventsUrl)
       .success(function(data) {
-        response.events = data.filter(function(elem) {
+        response = data.filter(function(elem) {
           return elem.tags.find(function(tag) {
             return tag.slug === name;
           });
@@ -73,7 +73,7 @@ angular.module('itytApp').service('Events', ['$http', function Events($http) {
     var response = {};
     return $http.get(dataEventsSimilarUrl)
       .success(function(data) {
-        response.events = data;
+        response = data;
       })
       .error(function(message) {
         response.error = message;
