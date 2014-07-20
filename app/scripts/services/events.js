@@ -21,12 +21,12 @@ angular.module('itytApp').service('Events', ['$http', function Events($http) {
       });
   };
 
-  eventsFactory.getEvent = function(id) {
+  eventsFactory.getEvent = function(slug) {
     var response = {};
     return $http.get(dataEventsUrl)
       .success(function(data) {
         response = data.find(function(elem) {
-          return +elem['_id'] === +id;
+          return elem['slug'] === slug;
         });
       })
       .error(function(message) {

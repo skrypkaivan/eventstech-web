@@ -5,10 +5,10 @@
     </tr>
     <tr bindonce ng-repeat="event in events">
       <td>
-        <p class="event_title"><a bo-href="'/events/' + event._id" bo-text="event.shortName"></a></p>
+        <p class="event_title"><a bo-href="'/events/' + event.slug" bo-text="event.shortName"></a></p>
         <p class="event_date" bo-text="((event.startdate + ' ' + event.enddate) | eventDate) + ', ' + event.place"></p>
       </td>
-      <td><p class="event_participants icons-people" bo-text="event.participants"></p></td>
+      <td><!--<p class="event_participants icons-people" bo-text="event.participants"></p>--></td>
     </tr>
   </table>
 </div>

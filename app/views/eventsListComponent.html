@@ -5,7 +5,7 @@
     </div>
     <div class="pull-left event_info">
       <p class="event_date" bo-text="((event.startdate + ' ' + event.enddate) | eventDate) + ', ' + event.city + ', ' + event.place"></p>
-      <h4 class="event_title"><a bo-href="'/events/' + event._id" bo-text="event.name"></a></h4>
+      <h4 class="event_title"><a bo-href="'/events/' + event.slug" bo-text="event.name"></a></h4>
       <tags-bar class="event_tags" entity="events" label="false" data="event.tags"></tags-bar>
       <p class="event_description" bo-text="event.shortDescription"></p>
       <!--

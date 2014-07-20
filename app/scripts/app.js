@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('itytApp', ['ngResource', 'pasvaz.bindonce']).config(function ($routeProvider, $locationProvider) {
+angular.module('itytApp', ['ngResource', 'pasvaz.bindonce', 'ngLocale']).config(function ($routeProvider, $locationProvider) {
 
   $routeProvider
     .when('/', {
@@ -12,12 +12,12 @@ angular.module('itytApp', ['ngResource', 'pasvaz.bindonce']).config(function ($r
         }
       }
     })
-    .when('/events/:id', {
+    .when('/events/:slug', {
       templateUrl: 'views/eventDetail.html',
       controller: 'EventDetailCtrl',
       resolve: {
         data: function($route, Events) {
-          return Events.getEvent($route.current.params.id);
+          return Events.getEvent($route.current.params.slug);
         },
         //Important: temporary mock -  for prod should be made with all events data in the main data at once
         speakers: function(Speakers) {

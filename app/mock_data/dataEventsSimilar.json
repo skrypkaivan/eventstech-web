@@ -2,6 +2,7 @@
   {
     "_id": 4,
     "shortName": "WED 2014",
+    "slug": "harkovjs-2014",
     "place": "Киев",
     "startdate": 1401001259574,
     "enddate": 1401001259574,
@@ -9,7 +10,8 @@
   },
   {
     "_id": 5,
-    "shortName": "Workshop \"Spring by example\"",
+    "shortName": "DevCon 2014",
+    "slug": "devcon-2014",
     "place": "Киев",
     "startdate": 1401001259574,
     "enddate": 1401001259574,
