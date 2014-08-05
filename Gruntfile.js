@@ -321,6 +321,12 @@ module.exports = function (grunt) {
         singleRun: true
       }
     },
+    karma-ci: {
+      unit: {
+       configFile: 'karma.ci.conf.js',
+       singleRun: true
+      }
+    },
     cdnify: {
       dist: {
         html: ['<%= yeoman.dist %>/*.html']
@@ -360,6 +366,14 @@ module.exports = function (grunt) {
       'watch'
     ]);
   });
+
+  grunt.registerTask('test-ci', [
+    'clean:server',
+    'concurrent:test',
+    'autoprefixer',
+    'connect:test',
+    'karma-ci'
+  ]);
 
   grunt.registerTask('test', [
     'clean:server',
