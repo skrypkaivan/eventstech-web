@@ -321,7 +321,7 @@ module.exports = function (grunt) {
         singleRun: true
       }
     },
-    karma-ci: {
+    karmaci: {
       unit: {
        configFile: 'karma.ci.conf.js',
        singleRun: true
@@ -367,12 +367,12 @@ module.exports = function (grunt) {
     ]);
   });
 
-  grunt.registerTask('test-ci', [
+  grunt.registerTask('testci', [
     'clean:server',
     'concurrent:test',
     'autoprefixer',
     'connect:test',
-    'karma-ci'
+    'karmaci'
   ]);
 
   grunt.registerTask('test', [
