@@ -84,4 +84,9 @@ angular.module('itytApp').service('Speakers', ['$http', function Events($http) {
 
   return speakersFactory;
 
+}]).factory("Speaker", ["$resource", function($resource) {
+    return $resource("api/speaker/:slug", {}, {
+        getByCategory : {method: "GET", isArray: true, url: "api/speaker/tag/:tagId"},
+        getPopular: {method: "GET", isArray: true, url: "api/speaker/popular"}
+    });
 }]);

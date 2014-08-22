@@ -1,14 +1,18 @@
 'use strict';
 
-angular.module('itytApp', ['ngResource', 'pasvaz.bindonce', 'ngLocale']).config(function ($routeProvider, $locationProvider) {
+angular.module('itytApp', ['ngRoute', 'ngResource', 'pasvaz.bindonce']).config(function ($routeProvider, $locationProvider) {
 
   $routeProvider
     .when('/', {
       templateUrl: 'views/events.html',
       controller: 'EventsCtrl',
       resolve: {
-        data: function(Events) {
-          return Events.getAll();
+        data: function($q, Event) {
+          var deferred = $q.defer();
+          Event.query({}, function(response) {
+              deferred.resolve(response);
+          });
+          return deferred.promise;
         }
       }
     })
@@ -16,8 +20,12 @@ angular.module('itytApp', ['ngResource', 'pasvaz.bindonce', 'ngLocale']).config(
       templateUrl: 'views/eventDetail.html',
       controller: 'EventDetailCtrl',
       resolve: {
-        data: function($route, Events) {
-          return Events.getEvent($route.current.params.slug);
+        data: function($q, $route, Event) {
+          var deferred = $q.defer();
+          Event.get({slug:$route.current.params.slug}, function(response) {
+              deferred.resolve(response);
+          });
+          return deferred.promise;
         },
         //Important: temporary mock -  for prod should be made with all events data in the main data at once
         speakers: function(Speakers) {
@@ -29,8 +37,12 @@ angular.module('itytApp', ['ngResource', 'pasvaz.bindonce', 'ngLocale']).config(
       templateUrl: 'views/events.html',
       controller: 'EventsCtrl',
       resolve: {
-        data: function($route, Events) {
-          return Events.getByTag($route.current.params.name);
+        data: function($q, $route, Event) {
+          var deferred = $q.defer();
+          Event.getByCategory({tagId:$route.current.params.name}, function(response) {
+              deferred.resolve(response);
+          });
+          return deferred.promise;
         }
       }
     })
@@ -38,8 +50,12 @@ angular.module('itytApp', ['ngResource', 'pasvaz.bindonce', 'ngLocale']).config(
       templateUrl: 'views/speakers.html',
       controller: 'SpeakersCtrl',
       resolve: {
-        data: function(Speakers) {
-          return Speakers.getAll();
+        data: function($q, Speaker) {
+          var deferred = $q.defer();
+          Speaker.query({}, function(response) {
+             deferred.resolve(response);
+          });
+          return deferred.promise;
         }
       }
     })
@@ -47,8 +63,12 @@ angular.module('itytApp', ['ngResource', 'pasvaz.bindonce', 'ngLocale']).config(
       templateUrl: 'views/speakerDetail.html',
       controller: 'SpeakerDetailCtrl',
       resolve: {
-        data: function($route, Speakers) {
-          return Speakers.getSpeaker($route.current.params.name);
+        data: function($q, $route, Speaker) {
+          var deferred = $q.defer();
+          Speaker.get({slug: $route.current.params.name}, function(response) {
+              deferred.resolve(response);
+          });
+          return deferred.promise;
         },
         //Important: temporary mock -  for prod should be made with all events data in the main data at once
         events: function(Events) {
@@ -60,8 +80,12 @@ angular.module('itytApp', ['ngResource', 'pasvaz.bindonce', 'ngLocale']).config(
       templateUrl: 'views/speakers.html',
       controller: 'SpeakersCtrl',
       resolve: {
-        data: function($route, Speakers) {
-          return Speakers.getByTag($route.current.params.name);
+        data: function($q, $route, Speaker) {
+          var deferred = $q.defer();
+          Speaker.getByCategory({tagId: $route.current.params.name}, function(response) {
+              deferred.resolve(response);
+          });
+          return deferred.promise;
         }
       }
     })

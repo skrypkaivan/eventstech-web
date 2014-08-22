@@ -82,7 +82,10 @@ angular.module('itytApp').service('Events', ['$http', function Events($http) {
         return response;
       });
   };
-
   return eventsFactory;
-
+}]).factory("Event", ["$resource", function($resource) {
+    return $resource("api/event/:slug", {} , {
+        getByCategory: {method:"GET", isArray:true, url: "api/event/tag/:tagId"},
+        getPopular: {method:"GET", isArray:true, url:"api/event/popular"}
+    });
 }]);

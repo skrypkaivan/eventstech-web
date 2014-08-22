@@ -1,13 +1,13 @@
 'use strict';
 
-angular.module('itytApp').directive('popularSpeakers', ['Speakers', function (Speakers) {
+angular.module('itytApp').directive('popularSpeakers', ['Speaker', function (Speaker) {
   return {
     templateUrl: 'views/speakersWidget.html',
     replace: 'true',
     restrict: 'E',
     scope: {},
     controller: function($scope){
-      Speakers.getPopular().then(function(data) {
+      Speaker.getPopular({}, function(data) {
         //ToDo: handle errors
         $scope.speakers = data;
       });

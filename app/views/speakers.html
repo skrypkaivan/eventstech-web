@@ -2,7 +2,7 @@
   <li bindonce ng-repeat="speaker in speakers">
     <div class="pull-left speaker_img_container">
       <a bo-href="'/speakers/' + speaker.slug" bo-title="speaker.name">
-        <img bo-src="speaker.photo | speakerPhoto" bo-alt="speaker.name" class="speaker_photo" />
+        <img bo-src="speaker.photo" bo-alt="speaker.name" class="speaker_photo" />
       </a>
     </div>
     <div class="pull-left speaker_info">
