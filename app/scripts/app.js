@@ -28,8 +28,15 @@ angular.module('itytApp', ['ngRoute', 'ngResource', 'pasvaz.bindonce']).config(f
           return deferred.promise;
         },
         //Important: temporary mock -  for prod should be made with all events data in the main data at once
-        speakers: function(Speakers) {
-          return Speakers.getAll();
+        speakers: function() {
+          return [];
+        },
+        similar: function(Event, $q, $route) {
+            var deferred = $q.defer();
+            Event.getSimilar({slug:$route.current.params.slug}, function(response) {
+               deferred.resolve(response);
+            });
+            return deferred.promise;
         }
       }
     })
@@ -70,9 +77,12 @@ angular.module('itytApp', ['ngRoute', 'ngResource', 'pasvaz.bindonce']).config(f
           });
           return deferred.promise;
         },
-        //Important: temporary mock -  for prod should be made with all events data in the main data at once
-        events: function(Events) {
-          return Events.getAll();
+        similar: function($q, $route, Speaker) {
+            var deferred = $q.defer();
+            Speaker.getSimilar({slug:$route.current.params.name}, function(response) {
+                deferred.resolve(response);
+            });
+            return deferred.promise;
         }
       }
     })

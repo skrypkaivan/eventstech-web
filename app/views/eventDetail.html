@@ -13,7 +13,7 @@
 
 <div class="pull-right">
   <event-speakers data="event.speakers"></event-speakers>
-  <similar-events></similar-events>
+  <similar-events ng-show="isSimilarVisible()" events="similarEvents"></similar-events>
 </div>
 
 <div class="clearfix"></div>

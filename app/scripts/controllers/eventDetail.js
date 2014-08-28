@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('itytApp').controller('EventDetailCtrl', ['$scope', 'Page', 'Constants', 'data', 'speakers', function ($scope, Page, Constants, data, speakers) {
+angular.module('itytApp').controller('EventDetailCtrl', ['$scope', 'Page', 'Constants', 'data', 'speakers',"similar", function ($scope, Page, Constants, data, speakers, similar) {
 
   /*
    * TODO:
@@ -11,5 +11,10 @@ angular.module('itytApp').controller('EventDetailCtrl', ['$scope', 'Page', 'Cons
 
   Page.setTitle(title.join(' - '));
   $scope.event = data;
+  $scope.similarEvents = similar;
+
+  $scope.isSimilarVisible = function() {
+    return $scope.similarEvents.length > 0;
+  };
 
 }]);

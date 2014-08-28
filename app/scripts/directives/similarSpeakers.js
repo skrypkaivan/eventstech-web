@@ -1,16 +1,12 @@
 'use strict';
 
-angular.module('itytApp').directive('similarSpeakers', ['Speakers', function (Speakers) {
+angular.module('itytApp').directive('similarSpeakers', [function () {
   return {
     templateUrl: 'views/speakersWidget.html',
     replace: 'true',
     restrict: 'E',
-    scope: {},
-    controller: function($scope){
-      Speakers.getSimilar().then(function(data) {
-        //ToDo: handle errors
-        $scope.speakers = data;
-      });
+    scope: {
+        speakers: "="
     },
     link: function(scope, element) {
       scope.title = 'Похожие докладчики';
