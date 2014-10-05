@@ -1,0 +1,121 @@
+.navbar {
+
+  $navButtonsBorder: 1px solid #88b5df;
+  $navButtonsBorderRaius: 4px;
+
+  background: #FFF;
+  font-size: 14px;
+  height: 77px;
+  border-bottom: 1px solid #e3e8ee;
+
+  span.icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .nav {
+    margin: 18px 0 0 50px;
+  }
+
+  li a, li a:hover {
+    background: transparent;
+    font-size: 20px;
+    font-weight: normal;
+    text-align: center;
+  }
+
+  li, li:hover {
+    background: transparent;
+    border: #{$navButtonsBorder};
+  }
+
+  .primary {
+
+    $colorActive: #88B3E0;
+
+    li {
+      border-right: 0;
+    }
+
+    li.active, li.active:hover {
+      background: #{$colorActive};
+      border-color: #{$colorActive} !important;
+      a,a:hover {
+        color: #FFF;
+      }
+    }
+
+    li.active ~ li {
+      border-left: 0;
+    }
+
+    li:first-of-type {
+      border-left: #{$navButtonsBorder};
+    }
+
+    li:last-of-type {
+      border-right: #{$navButtonsBorder};
+    }
+
+    a, a:hover {
+      color: #4E5E6E;
+      min-width: 200px;
+      padding: 2px 5px 0px;
+      line-height: 34px;
+      text-transform: uppercase;
+      span.icon {
+        margin-right: 5px;
+      }
+
+    }
+
+  }
+
+  .secondary {
+
+    $colorActive: #6CC939;
+
+    a, a:hover {
+      color: #2d2d2d;
+      line-height: 20px;
+      padding: 8px 15px 7px;
+    }
+
+    li {
+      margin-left: 10px;
+    }
+
+    li.active, li.active:hover {
+      background: #{$colorActive};
+      border-color: #{$colorActive} !important;
+      a,a:hover {
+        color: #FFF;
+      }
+    }
+  }
+
+  &.navbar-static-bottom {
+    background: #526375;
+    margin: 100px 0 0 0;
+    padding-top: 30px;
+
+    .navbar-footer {
+      margin: 0 0 0 0;
+      li {
+        border: 0;
+        margin-right: 40px;
+        a, a:hover {
+          color: #FFF;
+          font-size: 16px;
+          padding: 0;
+        }
+      }
+    }
+
+    .copyright {
+      color: #FFF;
+    }
+
+  }
+
+}

@@ -1,0 +1,62 @@
+.side_widget {
+
+  @include sideWidget();
+
+  .popular_events, .similar_events {
+
+    th {
+      background: #F6731B;
+    }
+
+    .event_title {
+      color: #393939;
+      font-size: 18px;
+      line-height: 22px;
+      margin: 0 0 6px 0;
+    }
+
+    .event_date {
+      color: #90979e;
+      font-size: 15px;
+      line-height: 18px;
+      margin: 0;
+    }
+
+    .event_participants {
+      color: #6B9DD0;
+      font-size: 20px;
+      line-height: 20px;
+      margin: 0;
+      padding-left: 35px;
+    }
+
+  }
+
+  .popular_speakers, .similar_speakers {
+
+    th {
+      background: #88B3E0;
+    }
+
+    .speaker_photo {
+      width: 54px;
+      height: 54px;
+      @include border-radius(27px);
+    }
+
+    .speaker_name {
+      color: #393939;
+      font-size: 18px;
+      line-height: 22px;
+      margin: 0 0 5px 0;
+    }
+
+    .speaker_info {
+      color: #90979E;
+      font-size: 15px;
+      line-height: 18px;
+      margin: 0;
+    }
+
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "datasheet",
+  "version": "0.1.0",
+  "description": "Gulp configuration for development automation and build",
+  "main": "Gruntfile.js",
+  "dependencies": {},
+  "private": true,
+  "devDependencies": {
+    "connect-history-api-fallback": "0.0.4",
+    "es6-shim": "^0.10.1",
+    "gulp": "~3.8.0",
+    "gulp-angular-templatecache": "^1.1.3",
+    "gulp-autoprefixer": "0.0.7",
+    "gulp-clean": "^0.2.4",
+    "gulp-concat": "^2.2.0",
+    "gulp-connect": "~2.0.5",
+    "gulp-csso": "~0.2.8",
+    "gulp-if": "~1.2.1",
+    "gulp-minify-html": "~0.1.3",
+    "gulp-open": "~0.2.8",
+    "gulp-preprocess": "^1.0.1",
+    "gulp-rename": "~1.2.0",
+    "gulp-sass": "~0.7.1",
+    "gulp-watch": "^0.6.10",
+    "portscanner": "^0.2.3",
+    "request": "^2.34.0",
+    "requirejs": "~2.1.11",
+    "yargs": "~1.2.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Roman Morozov",
+  "license": "MIT"
+}
