@@ -2,20 +2,18 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 $grid-gutter-width: 30px;
 $container-large-desktop: 1112px + $grid-gutter-width;
 $standardBorderRadius: 3px;
+$leftSideContainerWidth: 810px;
 
-//@import "base/bootstrap";
-//@import "compass/css3";
-//@import "compass/utilities/sprites";
-//@import "mixins/mixins";
+
+@import "mixins/mixins";
 @import "base/bootstrap";
 @import "base/basement";
 
-@import "modules/navbar";
-//@import "modules/sidewidgets";
-
-//$icons-spacing: 4px;
-//@import "icons/*.png";
-//@include all-icons-sprites;
-
 /* Site's 2-nd level styles and components */
-//@import "modules/navbar";
+@import "modules/navbar";
+@import "modules/tagsbar";
+@import "modules/eventBlock";
+@import "modules/eventsList";
+@import "modules/eventDetail";
+
+//@import "modules/sidewidgets";

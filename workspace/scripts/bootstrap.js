@@ -5,6 +5,8 @@ define(function(require) {
     //require('angularCookies');
     //require('angularAnimate');
     //require('angularMessages');
+    require('angularSanitize');
+    require('angularResource');
     require('uiBootstrap');
     require('uiRouter');
     //require('toaster');
@@ -13,25 +15,30 @@ define(function(require) {
     var dependencies = [
         // Modules
         //require('modules/common/main'),
+        require('modules/page/main'),
+        require('modules/widgets/main'),
+        require('modules/events/main'),
 
         // Screens
-        require('screens/index/main')
+        require('screens/index/main'),
+        require('screens/event-detail/main'),
 
         /* development */
         //require('modules/dev-tools/main'),
         //require('screens/testrest/main'),
-        //require('mocks/mocks')
+        require('mocks/mocks')
         /* end:development */
     ].map(function(dep) {
-            return dep.name;
-        });
+        return dep.name;
+    });
 
-    var app = angular.module('app', dependencies);
+    var app = angular.module('eventsTech', dependencies);
 
     //app.constant(require('modules/config/appConstantValidation'));
     //app.constant(require('modules/config/appConstantRoles'));
     //app.constant(require('modules/config/appConstantDelays'));
     //app.constant(require('modules/config/appConstantStyles'));
+    app.constant(require('modules/config/appConstantGlobals'));
 
     app.config(require('modules/config/appConfig'));
     //app.run(require('modules/config/appNavigationConfig'));
@@ -43,11 +50,12 @@ define(function(require) {
             //'ipCookie',
             //'ngAnimate',
             //'ngMessages',
+            'ngResource',
+            'ngSanitize',
             'ui.bootstrap',
             'ui.router',
-            //'restangular',
             //'toaster',
-            'app'
+            'eventsTech'
         ]);
     });
 

@@ -1,17 +1,47 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html ng-controller="pageCtrl">
 <head>
+    <base href='/' />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <base href="/"/>
-    <title>EventsTech</title>
+    <title ng-bind="Page.getTitle()"></title>
+
+    <meta name="title" content="{{Page.getTitle()}}" />
+    <meta name="description" content="{{Page.getDescription()}}"/>
+    <meta name="keywords" content="{{Page.getKeywords()}}"/>
+
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <meta property="og:url" content="{{Page.getUrl()}}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{Page.getTitle()}}" />
+    <meta property="og:description" content="{{Page.getDescription()}}" />
+    <meta property="og:image" content="{{Page.getImage()}}" />
+
+
+    <title ng-bind="Page.getTitle()"></title>
+
+    <!--
+    <link rel="apple-touch-icon" sizes="57x57" href="images/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="images/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/apple-touch-icon-152x152.png">
+    -->
+
     <script>
         var debugAppStartTime = +new Date;
         var DEBUG = <!-- @echo debug -->;
     </script>
 
-    <!--<link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css' />-->
-    <!--<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>-->
     <!-- @if !isBuild -->
     <!-- Development -->
     <link rel="stylesheet" href="assets/css/index.css">

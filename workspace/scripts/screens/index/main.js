@@ -1,11 +1,10 @@
-/**
- * Created by romo on 6/3/14.
- */
 define(function (require) {
     'use strict';
 
     var angular = require('angular');
     var module = angular.module('indexScreen', []);
+
+    module.controller(require('./controllers/indexCtrl'));
 
     /**
      * Base layout configuration
@@ -18,9 +17,6 @@ define(function (require) {
             $stateProvider
                 .state('client', {
                     abstract: true,
-                    data: {
-                        access: '$$GUEST_ACCESS'
-                    },
                     views: {
                         '': {
                             template: require('text!./templates/indexMain.html')
@@ -33,9 +29,23 @@ define(function (require) {
                         }
                     }
                 })
-                .state('client.index', {
+                .state('client.events', {
                     url: '/',
-                    template: require('text!./templates/indexContent.html')
+                    views: {
+                        'content@client': {
+                            template: require('text!./templates/indexContent.html'),
+                            controller: 'indexCtrl'
+                        }
+                    },
+                    resolve: {
+                        eventsList: ['$q', 'eventsService', function($q, eventsService) {
+                            var deferred = $q.defer();
+                            eventsService.query({}, function(response) {
+                                deferred.resolve(response);
+                            });
+                            return deferred.promise;
+                        }]
+                    }
                 });
         }
     ]);

@@ -1,0 +1,16 @@
+<ul class="events_list">
+  <li ng-repeat="event in eventsList" class="event_block">
+    <div class="pull-left event_img_container">
+      <a ui-sref="client.eventDetail({slug: event.slug})" ng-title="event.name">
+          <img ng-src="{{event.logo}}" ng-alt="event.name" />
+      </a>
+    </div>
+    <div class="pull-left event_info">
+      <p class="event_date">{{(event.startdate + ' ' + event.enddate) | eventDate}}, {{event.city}}, {{event.place}}</p>
+      <h4 class="event_title"><a ui-sref="client.eventDetail({slug: event.slug})" ng-bind="event.name"></a></h4>
+      <tags-bar class="event_tags" entity="events" label="false" tags="event.tags"></tags-bar>
+      <p class="event_description" ng-bind="event.shortDescription"></p>
+    </div>
+    <div class="clearfix"></div>
+  </li>
+</ul>

@@ -7,8 +7,7 @@ require.config({
         'es6shim': '../bower_components/es6-shim/es6-shim',
         'text': '../bower_components/requirejs-text/text',
         'json3': '../bower_components/json3/lib/json3',
-        // TODO: we should not use jquery, left it for now © Sublimeye
-        'jquery': '../bower_components/jquery/dist/jquery',
+
         // angular modules
         'angular': '../bower_components/angular/angular',
         'angularMocks': '../bower_components/angular-mocks/angular-mocks',
@@ -16,6 +15,7 @@ require.config({
         'angularMessages': '../bower_components/angular-messages/angular-messages',
         'angularAnimate': '../bower_components/angular-animate/angular-animate',
         'angularSanitize': '../bower_components/angular-sanitize/angular-sanitize',
+        'angularResource': '../bower_components/angular-resource/angular-resource',
         'uiRouter': '../bower_components/angular-ui-router/release/angular-ui-router',
         'uiBootstrap': '../bower_components/angular-bootstrap/ui-bootstrap'
         //'toaster': '../bower_components/angularjs-toaster/toaster',
@@ -41,7 +41,6 @@ require.config({
 
         // Application core dependencies, libraries
         bootstrap: [
-            //'jquery',
             'angular',
             'es5shim',
             'es6shim',

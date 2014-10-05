@@ -1,9 +1,7 @@
-$leftSideContainerWidth: 810px;
-
 @font-face{
   font-family: "Calibri";
-  src: url("../fonts/Calibri.eot");
-  src: url("../fonts/Calibri.eot?#iefix") format("eot"), url("../fonts/Calibri.woff") format("woff"), url("../fonts/Calibri.ttf") format("truetype"), url("../fonts/Calibri.svg#agel") format("svg");
+  src: url("../../assets/fonts/Calibri.eot");
+  src: url("../../assets/fonts/Calibri.eot?#iefix") format("eot"), url("../../assets/fonts/Calibri.woff") format("woff"), url("../../assets/fonts/Calibri.ttf") format("truetype"), url("../../assets/fonts/Calibri.svg#agel") format("svg");
 }
 
 ul, ol {
@@ -28,14 +26,5 @@ span.icon {
 a, a:hover {
   color: inherit;
   text-decoration: none;
-}
-
-.widget-outer-title {
-  color: #333;
-  font-size: 24px;
-  line-height: 30px;
-  margin: 10px 0 20px 0;
-  text-align: center;
-  width: $leftSideContainerWidth;
 }
 
