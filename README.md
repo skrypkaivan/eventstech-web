@@ -1,4 +1,0 @@
-ittyt
-=====
-
-Ittyt project
